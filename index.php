@@ -1,4 +1,5 @@
 <?
 require_once __DIR__.'/core/core.php';
-echo Debug($GLOBALS);
+
+$HTML = new WWW($CFG);
 ?>
