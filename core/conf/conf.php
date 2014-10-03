@@ -26,7 +26,6 @@ class CFG {
       $this->Dependancies();
       $this->SetStyles();
       $this->CheckDB(@$ARGS['hosts']);
-      $this->CheckHost(@$ARGS['host']);
     }
   /** 
    * IniSet
@@ -153,28 +152,6 @@ class CFG {
       $DB = new DBC($N,$H,$U,$P);
       $_ = isset($DB->S[$N])?$DB:'Initial DB Connection Failed';
       return empty($DB)?Quit('No Initial Database Connection'):$DB;
-    }
-  /** 
-   * CheckHost
-   * -------------------------
-   * get server hostname and check for active status
-   * in the `MUP.hardware.servers` database
-   * -------------------------
-   * @param string $HN // pass a specific hostname. false will use hostname where the script is running.
-   * -------------------------
-   **/
-  public function CheckHost($HN=false)
-    {
-      $H = empty($HN)?trim(strtolower(gethostname())):$HN;
-      $Q = $this->DB->GET('MUP.hardware.servers',['type'=>'PMTA','active'=>1,'name'=>$H],['name','id'],1);
-      if(isset($Q['name'])){
-        $this->hostname = $Q['name'];
-        define('hostname',$this->hostname);
-        $this->hostID = $Q['id'];
-        define('hostID',$this->hostID);
-      }else{
-        Quit('Invalid Hostname!');
-      }
     }
   /** 
    * Dependancies
