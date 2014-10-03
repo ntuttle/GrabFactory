@@ -1,4 +1,4 @@
 <?
 require_once __DIR__.'/core/core.php';
-echo Debug($X);
+echo Debug($GLOBALS);
 ?>
