@@ -16,7 +16,6 @@
 # Database Connections
 #---------------------------------------------------
   $H['DB']      = [
-      # IncomingEmail,PMTAlogs,metadata
       'public'  =>'localhost',
       'private' => false,
       'port'    => 3306
