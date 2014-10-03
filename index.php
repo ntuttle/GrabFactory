@@ -2,5 +2,5 @@
 require_once __DIR__.'/core/core.php';
 
 $HTML = new WWW($CFG);
-echo Debug($HTML);
+echo implode(LF,$HTML->HTML);
 ?>
