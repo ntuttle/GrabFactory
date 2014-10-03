@@ -17,7 +17,7 @@
 #---------------------------------------------------
   $H['DB']      = [
       # IncomingEmail,PMTAlogs,metadata
-      'public'  =>'207.158.26.18',
+      'public'  =>'localhost',
       'private' => false,
       'port'    => 3306
       ];
