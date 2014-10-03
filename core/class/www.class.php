@@ -16,7 +16,12 @@ class www {
    **/
   public function GetPage()
     {
-      
+      $HTML[] = '<tr>';
+      $HTML[] = '<td>';
+      $HTML[] = '<h2>Content</h2>';
+      $HTML[] = '</td>';
+      $HTML[] = '</tr>';
+      $this->HTML($HTML);
     }
   /**
    * Navbar
@@ -24,14 +29,11 @@ class www {
    **/
   public function Navbar()
     {
-      $HTML[] = '<td class="nb">';
-      $HTML[] = '<h2>Scripts</h2>';
-      $HTML[] = $this->GetFiles('apps',true);
-      $HTML[] = '<h2>Logs</h2>';
-      $HTML[] = $this->GetFiles('logs');
-      $HTML[] = '<h2>Output</h2>';
-      $HTML[] = $this->GetFiles('data');
+      $HTML[] = '<tr>';
+      $HTML[] = '<td>';
+      $HTML[] = '<h2>Home</h2>';
       $HTML[] = '</td>';
+      $HTML[] = '</tr>';
       $this->HTML($HTML);
     }
   /**
@@ -83,7 +85,6 @@ class www {
       $HTML[] = '</head>';
       $HTML[] = '<body>';
       $HTML[] = '<table>';
-      $HTML[] = '<tr>';
       $this->HTML($HTML);
     }
   /**
@@ -92,7 +93,6 @@ class www {
    **/
   public function Foot()
     {
-      $HTML[] = '</tr>';
       $HTML[] = '</table';
       $HTML[] = '</body>';
       $HTML[] = '</html>';
